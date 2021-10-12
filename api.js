@@ -90,9 +90,10 @@ const editCrime = async (request, response) => {
     var reporter_address = request.body.reporter_address;
     var barangay =request.body.barangay;
     var statuss =  request.body.status;
+    var id = request.body.id;
 
 
-    var sql = "UPDATE crimes SET report_details='"+report_details+"', crimeType_id="+crimeType_id+", reporter_name='"+reporter_name+"', reporter_contact='"+reporter_contact+"', reporter_address='"+reporter_address+"', status='"+statuss+"', barangay='"+barangay+"' WHERE id="+4;
+    var sql = "UPDATE crimes SET report_details='"+report_details+"', crimeType_id="+crimeType_id+", reporter_name='"+reporter_name+"', reporter_contact='"+reporter_contact+"', reporter_address='"+reporter_address+"', status='"+statuss+"', barangay='"+barangay+"' WHERE id="+id;
     
     conn.query(sql, function (error, results) {
         if (error) {
