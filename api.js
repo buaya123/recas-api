@@ -117,6 +117,7 @@ const getAllCrimes = async (request, response) => {
 
         returnObj.status = 0;
         returnObj.data = results;
+        console.log(returnObj)
         response.status(200).json(returnObj)
     });
 };
