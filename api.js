@@ -79,7 +79,7 @@ const editCrime = async (request, response) => {
     console.log(request.body.crimeType_id)
     console.log(request.body.reporter_name)
     console.log(request.body.reporter_contact)
-    console.log(request.body.barangay)
+    console.log(request.body.id)
     console.log(request.body.status)
 
     var report_details = request.body.report_details;
