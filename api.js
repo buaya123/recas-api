@@ -94,7 +94,7 @@ const editCrime = async (request, response) => {
     
     conn.query(sql, function (error, results) {
         if (error) {
-            return response.status(500).json("error updating crime")
+            return response.status(500).json(error)
         }
 
         response.status(200).json("Crime report updated")
