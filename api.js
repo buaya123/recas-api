@@ -260,7 +260,7 @@ const getOneCrime = async (request, response) => {
     var id = request.body.id;
     console.log(id)
 
-    var sql = "SELECT crimes.id,crimes.report_details,crimes.crimeType_id,crimes.date,crimes.reporter_name,crimes.reporter_address,crimes.reporter_contact,crimes.latitude,crimes.longitude,crimes.status,crimes.user_id,crimes.barangay,crimetype.type,crimetype.against FROM crimes JOIN crimetype ON crimetype.id=crimes.crimeType_id WHERE id="+parseInt(id);
+    var sql = "SELECT crimes.id,crimes.report_details,crimes.crimeType_id,crimes.date,crimes.reporter_name,crimes.reporter_address,crimes.reporter_contact,crimes.latitude,crimes.longitude,crimes.status,crimes.user_id,crimes.barangay,crimetype.type,crimetype.against FROM crimes JOIN crimetype ON crimetype.id=crimes.crimeType_id WHERE crimes.id="+parseInt(id);
 
     var returnObj = {
         status:1,
