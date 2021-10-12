@@ -75,6 +75,11 @@ const getCrimeType = async (request, response) => {
 
 //not updated or used
 const editCrime = async (request, response) => {
+    console.log(request.body.report_details)
+    console.log(request.body.crimeType_id)
+    console.log(request.body.reporter_name)
+    console.log(request.body.reporter_contact)
+    console.log(request.body.latitude)
 
     var report_details = request.body.report_details;
     var crimeType_id = request.body.crimeType_id;
@@ -82,13 +87,10 @@ const editCrime = async (request, response) => {
     var reporter_name = request.body.reporter_name;
     var reporter_contact = request.body.reporter_contact;
     var reporter_address = request.body.reporter_address;
-    var latitude = request.body.latitude;
-    var longitude = request.body.longitude;
-    var statuss = "ongoing";
-    var user_id = request.body.user_id;
+    var statuss =  request.body.status;
 
 
-    var sql = "UPDATE crimes SET report_details='"+report_details+"', crimeType_id="+crimeType_id+", reporter_name='"+reporter_name+"', reporter_contact='"+reporter_contact+"', reporter_address='"+reporter_address+"', latitude="+latitude+", longitude="+longitude+", status='"+statuss+"', user_id="+user_id+" WHERE id="+4;
+    var sql = "UPDATE crimes SET report_details='"+report_details+"', crimeType_id="+crimeType_id+", reporter_name='"+reporter_name+"', reporter_contact='"+reporter_contact+"', reporter_address='"+reporter_address+"', status='"+statuss+"' WHERE id="+4;
     
     conn.query(sql, function (error, results) {
         if (error) {
