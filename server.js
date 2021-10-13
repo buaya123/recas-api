@@ -46,35 +46,35 @@ app.get('/', (req, res) => {
   res.send('welcome to the recas-api endpoint.');
 });
 
-app.post('/reportCrime', api.reportCrime);
+app.post('/reportCrime',cors(), api.reportCrime);
 
-app.post('/editCrime', api.editCrime);
+app.post('/editCrime', cors(),api.editCrime);
 
-app.get('/getAllCrimes', api.getAllCrimes);
+app.get('/getAllCrimes', cors(),api.getAllCrimes);
 
-app.post('/searchCrime', api.searchCrime);
+app.post('/searchCrime', cors(),api.searchCrime);
 
-app.get('/getAllCrimeTypes', api.getAllCrimeTypes);
+app.get('/getAllCrimeTypes',cors(), api.getAllCrimeTypes);
 
-app.post('/getCrimeType', api.getCrimeType);
+app.post('/getCrimeType',cors(), api.getCrimeType);
 
-app.post('/sendLatLong', api.sendLatLong);
+app.post('/sendLatLong', cors(),api.sendLatLong);
 
-app.post('/register', api.register);
+app.post('/register',cors(), api.register);
 
-app.post('/login', api.login);
+app.post('/login',cors(), api.login);
 
-app.post('/getUnitLocation', api.getUnitLocation);
+app.post('/getUnitLocation',cors(), api.getUnitLocation);
 
-app.post('/getOneCrime', api.getOneCrime);
+app.post('/getOneCrime',cors(), api.getOneCrime);
 
-app.post('/addDispatch', api.addDispatch);
+app.post('/addDispatch',cors(), api.addDispatch);
 
-app.get('/showDispatch', api.showDispatch);
+app.get('/showDispatch', cors(),api.showDispatch);
 
-app.post('/editDispatch', api.editDispatch);
+app.post('/editDispatch',cors(), api.editDispatch);
 
-app.post('/getDispatch', api.getDispatch);
+app.post('/getDispatch',cors(), api.getDispatch);
 
 app.listen(port, () => {
   console.log(`listening on port: `+port);
