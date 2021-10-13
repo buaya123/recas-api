@@ -6,7 +6,9 @@ const api = require('./api');
 // const pusher = require('./pusher');
 const port = process.env.PORT || 3000;
 // enabling CORS to accept from all origins
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 // express.json() and express.urlencoded() are built-in middleware functions to support JSON-encoded and URL-encoded bodies.
 // to be able to get object data from the url
 app.use(express.json());
@@ -46,35 +48,35 @@ app.get('/', (req, res) => {
   res.send('welcome to the recas-api endpoint.');
 });
 
-app.post('/reportCrime',cors(), api.reportCrime);
+app.post('/reportCrime', api.reportCrime);
 
-app.post('/editCrime', cors(),api.editCrime);
+app.post('/editCrime',api.editCrime);
 
-app.get('/getAllCrimes', cors(),api.getAllCrimes);
+app.get('/getAllCrimes',api.getAllCrimes);
 
-app.post('/searchCrime', cors(),api.searchCrime);
+app.post('/searchCrime',api.searchCrime);
 
-app.get('/getAllCrimeTypes',cors(), api.getAllCrimeTypes);
+app.get('/getAllCrimeTypes', api.getAllCrimeTypes);
 
-app.post('/getCrimeType',cors(), api.getCrimeType);
+app.post('/getCrimeType', api.getCrimeType);
 
-app.post('/sendLatLong', cors(),api.sendLatLong);
+app.post('/sendLatLong',api.sendLatLong);
 
-app.post('/register',cors(), api.register);
+app.post('/register', api.register);
 
-app.post('/login',cors(), api.login);
+app.post('/login', api.login);
 
-app.post('/getUnitLocation',cors(), api.getUnitLocation);
+app.post('/getUnitLocation', api.getUnitLocation);
 
-app.post('/getOneCrime',cors(), api.getOneCrime);
+app.post('/getOneCrime', api.getOneCrime);
 
-app.post('/addDispatch',cors(), api.addDispatch);
+app.post('/addDispatch', api.addDispatch);
 
-app.get('/showDispatch', cors(),api.showDispatch);
+app.get('/showDispatch',api.showDispatch);
 
-app.post('/editDispatch',cors(), api.editDispatch);
+app.post('/editDispatch', api.editDispatch);
 
-app.post('/getDispatch',cors(), api.getDispatch);
+app.post('/getDispatch', api.getDispatch);
 
 app.listen(port, () => {
   console.log(`listening on port: `+port);
