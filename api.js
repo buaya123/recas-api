@@ -450,7 +450,7 @@ const addDispatch = async (request, response) => {
     var lat = request.body.latitude;
     var long = request.body.longitude;
 
-    var sql = "INSERT INTO dispatch VALUES (NULL,'"+unit_no+"','"+details+"','"+date+"','"+lat+"','"+long+"')"
+    var sql = "INSERT INTO dispatch VALUES (NULL,'"+unit_no+"','"+details+"','"+date+"','"+long+"','"+lat+"')"
     
     conn.query(sql, function (error, results) {
         if (error) {
